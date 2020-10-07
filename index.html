@@ -1,0 +1,68 @@
+<html> 
+    <head>
+        <title>Rock-Paper-Scissors</title>
+    </head>
+    <body>
+        <script>
+            var playerSelection;
+            var computerSelection;
+            let playerScore = 0, computerScore = 0;
+            
+            function computerPlay() {
+                let computerOptions = ["rock","paper","scissors"];
+                return computerOptions[Math.floor(Math.random()*computerOptions.length)];
+            }
+
+            
+            
+            function playRound(){
+                playerSelection = (prompt("Insert rock, paper or scissors")).toLowerCase();
+                computerSelection = computerPlay();
+                
+                if (playerSelection == "rock" && computerSelection == "rock") {
+                    alert("You both chose rock! Each player gets a point.");
+                    playerScore++;
+                    computerScore++;
+                    alert(`The score is Computer ${computerScore} - ${playerScore} Player`);
+                } else if (playerSelection == "paper" && computerSelection == "paper") {
+                    alert("You both chose paper! Each player gets a point.");
+                    playerScore++;
+                    computerScore++;
+                    alert(`The score is Computer ${computerScore} - ${playerScore} Player`);
+                } else if (playerSelection == "scissors" && computerSelection == "scissors") {
+                    alert("You both chose scissors! Each player gets a point.");
+                    playerScore++;
+                    computerScore++;
+                    alert(`The score is Computer ${computerScore} - ${playerScore} Player`);
+                } else if (playerSelection == "paper" && computerSelection == "rock") {
+                    alert("You chose paper and the computer chose rock. You win this round!");
+                    playerScore++;
+                    alert(`The score is Computer ${computerScore} - ${playerScore} Player`);
+                } else if (playerSelection == "scissors" && computerSelection == "paper") {
+                    alert("You chose scissors and the computer chose paper. You win this round!");
+                    playerScore++;
+                    alert(`The score is Computer ${computerScore} - ${playerScore} Player`);
+                } else if (playerSelection == "rock" && computerSelection == "scissors") {
+                    alert("You chose rock and the computer chose scissors. You win this round!");
+                    playerScore++;
+                    alert(`The score is Computer ${computerScore} - ${playerScore} Player`);
+                } else if (playerSelection == "paper" && computerSelection == "scissors") {
+                    alert("You chose paper and the computer chose scissors. The computer wins this round!");
+                    computerScore++;
+                    alert(`The score is Computer ${computerScore} - ${playerScore} Player`);
+                } else if (playerSelection == "scissors" && computerSelection == "rock") {
+                    alert("You chose scissors and the computer chose rock. The computer wins this round!");
+                    computerScore++;
+                    alert(`The score is Computer ${computerScore} - ${playerScore} Player`);
+                } else if (playerSelection == "rock" && computerSelection == "paper") {
+                    alert("You chose rock and the computer chose paper. The computer wins this round!");
+                    computerScore++;
+                    alert(`The score is Computer ${computerScore} - ${playerScore} Player`);
+                } else {
+                    alert("The input was invalid. Input only 'rock', 'paper' or 'scissors'.");
+                }
+            }       
+
+        </script>
+    </body>
+</html>
